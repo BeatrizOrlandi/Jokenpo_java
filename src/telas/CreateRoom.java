@@ -63,11 +63,11 @@ public class CreateRoom  extends JPanel {
 	        
 	        g.setColor(CUSTOMIZED_BLUE);
 	        g.setFont(fredoka);
-	        g.drawString("CÛdigo da Sala", 500, 480);
+	        g.drawString("C√≥digo da Sala", 500, 480);
 	        
 	        g.setColor(CUSTOMIZED_BLUE);
 	        g.setFont(fredoka.deriveFont(6));
-	        g.drawString("Aguardando Conex„o", 850, 800);
+	        g.drawString("Aguardando Conex√£o", 850, 800);
 	}
 
 	public JButton getBtnVoltar() {

@@ -139,7 +139,7 @@ public class Lobby extends JPanel {
          * Placar
          */
    	 	g.setFont(fredoka.deriveFont((float) 45));
-   	 	g.drawString("Round " + placar[4], 510, 400);
+   	 	g.drawString("Round " + placar[4], 500, 480);
    	 	
    	 	String strPlacar = placar[0] + "  " + placar[1] + "  " + "X" + "  " + placar[3] + "  " + placar[2]; 
    	 	if(lblPlacar != null)
@@ -147,7 +147,7 @@ public class Lobby extends JPanel {
    	 	lblPlacar = new JLabel(strPlacar, SwingConstants.CENTER);
    	 	lblPlacar.setFont(fredoka.deriveFont((float) 28));
    	 	lblPlacar.setForeground(CUSTOMIZED_BLUE);
-   	 	lblPlacar.setBounds(350, 220, 500, 40);
+   	 	lblPlacar.setBounds(350, 320, 500, 40);
    	 	add(lblPlacar);
         
    	 	/**
@@ -175,12 +175,12 @@ public class Lobby extends JPanel {
 			
         	if(nomeVencedor != null && !nomeVencedor.equalsIgnoreCase("null")){
                 g.setFont(fredoka.deriveFont((float) 40));
-                g.drawString(nomeVencedor, 430, 550);
-            	g.drawString("venceu o round!", 450, 600);
+                g.drawString(nomeVencedor, 500, 550);
+            	g.drawString("venceu o round!", 420, 600);
 
         	} else {
         		g.setFont(fredoka.deriveFont((float) 50));
-            	g.drawString("Empate!", 500, 500);
+            	g.drawString("Empate!", 500, 550);
         	}
 			
         }
@@ -223,13 +223,8 @@ public class Lobby extends JPanel {
 	
 	public void nextRound() {
 		/**
-		 * Refaz todas as configura��es iniciais
+		 * Refaz todas as configurações iniciais
 		 */
-		jogadaArdversario = null;
-		adversarioJogou = false;
-		fimRound = false;
-		nomeVencedor = null;
-		
 		if(lblTesoura != null)
         		lblTesoura.setVisible(false);
 		if(lblPapel != null)
@@ -237,6 +232,11 @@ public class Lobby extends JPanel {
 		if(lblPedra != null)
 				lblPedra.setVisible(false);
 		lblLupa.setVisible(true);
+
+		jogadaArdversario = null;
+		adversarioJogou = false;
+		fimRound = false;
+		nomeVencedor = null;
 
 		
 		btnConfirm.setText("Confirmar");
@@ -265,4 +265,3 @@ public class Lobby extends JPanel {
         return buttonName;
 	}		
 }
-

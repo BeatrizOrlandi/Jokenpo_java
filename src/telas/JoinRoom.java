@@ -72,7 +72,7 @@ public class JoinRoom extends JPanel {
 	        
 	        g.setColor(CUSTOMIZED_BLUE);
 	        g.setFont(fredoka);
-	        g.drawString("Informe o Código da Sala", 430, 480);
+	        g.drawString("Informe o CÃ³digo da Sala", 430, 480);
 	}
 	
 	public void paintErrorMessage() {
