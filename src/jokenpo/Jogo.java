@@ -12,12 +12,6 @@ public class Jogo {
 		jogador2 = new Jogador(nickJogador2);
 	};
 	
-	/**
-	 * 
-	 * @param jogada1 - jogada realizada pelo jogador 1
-	 * @param jogada2 - jogada realizada pelo jogador 2
-	 * @return String - nome do jogador vencedor.
-	 */
 	public String fazJogada() {
 		if(jogador1.getJogadaAtual().ganhaDe(jogador2.getJogadaAtual())) {
 			roundAtual = getRoundAtual() + 1;
@@ -57,16 +51,15 @@ public class Jogo {
 	}
 	
 	public String verificaFim(){
-		if(roundAtual > 5) {
-			if(jogador1.getVitorias() > jogador2.getVitorias()) {
-				return jogador1.getNome();
-			}else if(jogador1.getVitorias() < jogador2.getVitorias()) {
-				return jogador2.getNome();
-			}else {
-				return "Empate";
-			}
+		
+		if(jogador1.getVitorias() > jogador2.getVitorias()) {
+			return jogador1.getNome();
+		}else if(jogador1.getVitorias() < jogador2.getVitorias()) {
+			return jogador2.getNome();
+		}else {
+			return "Empate";
 		}
-		return null;
+
 	}
 
 	public int getRoundAtual() {

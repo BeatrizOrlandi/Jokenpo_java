@@ -3,9 +3,8 @@ package conectividade.server;
 import static conectividade.Flag.ADVERSARIOJOGOU;
 import static conectividade.Flag.JOGADAS;
 import static conectividade.Flag.PLACAR;
-import static conectividade.Flag.PLACARFINAL;
 import static conectividade.Flag.VENCEDOR;
-import static conectividade.Flag.VENCEDORFINAL;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -81,10 +80,11 @@ public class RequestHandler extends Thread {
 						 * Verifica se o Jogo chegou ao fim
 						 */
 						server.sendToClients(PLACAR + server.getPlacar());
-						String vencedorFinal = server.getJogo().verificaFim();
-						server.sendToClients(VENCEDORFINAL + vencedorFinal);
-						if(vencedorFinal != null)
-							server.sendToClients(PLACARFINAL + server.getPlacar());
+						
+						// String vencedorFinal = server.getJogo().verificaFim();
+						// server.sendToClients(VENCEDORFINAL + vencedorFinal);
+						// if(vencedorFinal != null)
+						// 	server.sendToClients(PLACARFINAL + server.getPlacar());
 					}
 				}
 				

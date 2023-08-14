@@ -43,6 +43,7 @@ public class Lobby extends JPanel {
 	private JLabel lblPlacar;
 
 	private JButton btnConfirm;
+	private JButton btnEncerra;
 	private ButtonGroup radioGroup;
 	
 	private String jogadaArdversario = null;
@@ -105,7 +106,13 @@ public class Lobby extends JPanel {
 		btnConfirm.setFont(fredoka);
 		btnConfirm.setBackground(CUSTOMIZED_BLUE);
 		btnConfirm.setBounds(500, 700, 200, 40);
-		add(btnConfirm);	
+		add(btnConfirm);
+		
+		btnEncerra = new JButton("Finalizar Jogo");
+		btnEncerra.setFont(fredoka);
+		btnEncerra.setBackground(CUSTOMIZED_BLUE);
+		btnEncerra.setBounds(490, 800, 250, 40);
+		add(btnEncerra);
 	}
 	
 	@Override
@@ -188,6 +195,10 @@ public class Lobby extends JPanel {
 
 	public JButton getBtnConfirm() {
 		return btnConfirm;
+	}
+
+	public JButton getBtnEncerra() {
+		return btnEncerra;
 	}
 
 	public void setJogadas(String[] jogadas) {
