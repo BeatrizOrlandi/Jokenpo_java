@@ -142,6 +142,12 @@ public class Lobby extends JPanel {
    	 	 * Informações que somente aparecem enquanto o round est� sendo jogado
    	 	 */
         if(!fimRound) {
+			if(lblTesoura != null)
+        		lblTesoura.setVisible(false);
+			if(lblPapel != null)
+					lblPapel.setVisible(false);
+			if(lblPedra != null)
+				lblPedra.setVisible(false);
             g.setFont(fredoka.deriveFont((float) 16));
              
         	g.drawString("Selecione sua jogada clicando", 470, 650);
@@ -251,6 +257,7 @@ public class Lobby extends JPanel {
 				lblPapel.setVisible(false);
 		if(lblPedra != null)
 				lblPedra.setVisible(false);
+		
 
 		
 		btnConfirm.setText("Confirmar");
