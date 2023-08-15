@@ -12,4 +12,6 @@ public class Flag {
 	public static String VENCEDOR = "VENCEDOR:";
 	public static String VENCEDORFINAL = "VENCEDORFINAL:";
 	public static String STOP = "STOP:";
+	public static String PROX = "PROX:";
+	public static String ENCERRA = "ENCERRA:";
 }

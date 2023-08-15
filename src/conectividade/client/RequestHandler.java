@@ -70,19 +70,20 @@ public class RequestHandler extends Thread {
 					
 				}
 				
+				if("PROX".equals(flag)) {
+					cliente.lobbyNextRound();	
+				}
+
 				if("VENCEDOR".equals(flag)) {
 					cliente.setLobbyVencedorRound(value);
-					cliente.lobbyNextRound();
 				}
 				
 				if("VENCEDORFINAL".equals(flag)) {
-
-						cliente.showFimJogo(value);
-						
+					cliente.showFimJogo(value);		
 				}
 				
 				if("STOP".equals(flag)) {
-					sendToServer("Encerrando Conex�o");
+					sendToServer("Encerrando Conexão");
 					stop = true;
 				}
 				

@@ -26,8 +26,7 @@ import javax.swing.JPanel;
 
 import conectividade.client.Client;
 import conectividade.server.Server;
-import static conectividade.Flag.PLACARFINAL;
-import static conectividade.Flag.VENCEDORFINAL;
+import static conectividade.Flag.ENCERRA;
 import telas.CreateRoom;
 import telas.FimJogo;
 import telas.JoinRoom;
@@ -253,9 +252,7 @@ public class Main extends JFrame {
 		lobby.getBtnEncerra().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				som.sound("res/select.wav");
-				String vencedorFinal = server.getJogo().verificaFim();
-				server.sendToClients(VENCEDORFINAL + vencedorFinal);
-				server.sendToClients(PLACARFINAL + server.getPlacar());
+				client.sendToServer(ENCERRA + 1);
 			}
 		});
 	}

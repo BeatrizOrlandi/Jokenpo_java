@@ -4,7 +4,9 @@ import static conectividade.Flag.ADVERSARIOJOGOU;
 import static conectividade.Flag.JOGADAS;
 import static conectividade.Flag.PLACAR;
 import static conectividade.Flag.VENCEDOR;
-
+import static conectividade.Flag.PROX;
+import static conectividade.Flag.VENCEDORFINAL;
+import static conectividade.Flag.PLACARFINAL;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -59,6 +61,12 @@ public class RequestHandler extends Thread {
 					stop = true;
 					server.stopServer();
 				}
+
+				if("ENCERRA".equals(flag)) {
+					String vencedorFinal = server.getJogo().verificaFim();
+					server.sendToClients(VENCEDORFINAL + vencedorFinal);
+					server.sendToClients(PLACARFINAL + server.getPlacar());
+				}
 				
 				if("JOGADA".equals(flag)) {
 					String name = line[2];
@@ -69,23 +77,23 @@ public class RequestHandler extends Thread {
 						String nomeVencedor = server.getJogo().fazJogada();
 						server.sendToClients(JOGADAS + server.getJogadas());
 						server.sendToClients(VENCEDOR + nomeVencedor);
-						server.resetarJogadas();
 						
 						/**
 						 * Tempo dos jogadores verem o resultado
 						 */
 						RequestHandler.sleep(5000);
 						
-						/**
-						 * Verifica se o Jogo chegou ao fim
-						 */
+
 						server.sendToClients(PLACAR + server.getPlacar());
-						
+						server.resetarJogadas();
+						server.sendToClients(PROX + 1);
 						// String vencedorFinal = server.getJogo().verificaFim();
 						// server.sendToClients(VENCEDORFINAL + vencedorFinal);
 						// if(vencedorFinal != null)
 						// 	server.sendToClients(PLACARFINAL + server.getPlacar());
 					}
+
+					
 				}
 				
 			} while (!stop);
