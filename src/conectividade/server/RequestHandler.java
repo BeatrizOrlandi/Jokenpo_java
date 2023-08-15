@@ -73,8 +73,15 @@ public class RequestHandler extends Thread {
 					server.sendToClients(ADVERSARIOJOGOU + name);
 
 					boolean fazerJogada = server.getJogo().armazenaJogada(name, value);
-					System.out.println(fazerJogada);
+					
+					/**
+					 * Entra somente quando ambos os jogadores tiverem feito a jogada
+					 */
 					if(fazerJogada) { 
+
+						/**
+						 * Mostra aos clientes o resultado do round e a jogada de cada jogador com o vencedor
+						 */
 						String nomeVencedor = server.getJogo().fazJogada();
 						server.sendToClients(JOGADAS + server.getJogadas());
 						server.sendToClients(VENCEDOR + nomeVencedor);
@@ -84,7 +91,9 @@ public class RequestHandler extends Thread {
 						 */
 						RequestHandler.sleep(5000);
 						
-
+						/**
+						 * Atualiza os placares e inicia um novo jogo (próximo round)
+						 */
 						server.sendToClients(PLACAR + server.getPlacar());
 						server.resetarJogadas();
 						server.sendToClients(PROX + 1);

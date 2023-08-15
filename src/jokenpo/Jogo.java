@@ -35,11 +35,9 @@ public class Jogo {
 	public boolean armazenaJogada(String nome, String nomeJogada) {
 		if(nome.equals(jogador1.getNome())) {
 			jogador1.setJogadaAtual(Jogada.getJogada(nomeJogada));
-			System.out.println("jog 1");
 		}
 		else if(nome.equals(jogador2.getNome())) {
 			jogador2.setJogadaAtual(Jogada.getJogada(nomeJogada));
-			System.out.println("jog 2");
 		}
 		
 		/**
