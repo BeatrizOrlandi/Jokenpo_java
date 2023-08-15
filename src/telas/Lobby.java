@@ -113,6 +113,21 @@ public class Lobby extends JPanel {
 		btnEncerra.setBackground(CUSTOMIZED_BLUE);
 		btnEncerra.setBounds(480, 760, 250, 40);
 		add(btnEncerra);
+
+		lblTesoura = new JLabel(new ImageIcon(getClass().getResource("/select_tesoura.png")));
+		lblTesoura.setBounds(860, 400, 165, 518);
+		add(lblTesoura);
+		lblTesoura.setVisible(false);
+
+		lblPapel = new JLabel(new ImageIcon(getClass().getResource("/select_papel.png")));
+		lblPapel.setBounds(860, 400, 165, 518);
+		add(lblPapel);
+		lblPapel.setVisible(false);
+
+		lblPedra = new JLabel(new ImageIcon(getClass().getResource("/select_pedra.png")));
+		lblPedra.setBounds(860, 400, 165, 518);
+		add(lblPedra);
+		lblPedra.setVisible(false);
 	}
 	
 	@Override
@@ -137,17 +152,13 @@ public class Lobby extends JPanel {
    	 	lblPlacar.setForeground(CUSTOMIZED_BLUE);
    	 	lblPlacar.setBounds(350, 320, 500, 40);
    	 	add(lblPlacar);
+
+		
         
    	 	/**
    	 	 * Informações que somente aparecem enquanto o round est� sendo jogado
    	 	 */
         if(!fimRound) {
-			if(lblTesoura != null)
-        		lblTesoura.setVisible(false);
-			if(lblPapel != null)
-					lblPapel.setVisible(false);
-			if(lblPedra != null)
-				lblPedra.setVisible(false);
             g.setFont(fredoka.deriveFont((float) 16));
              
         	g.drawString("Selecione sua jogada clicando", 470, 650);
@@ -171,20 +182,14 @@ public class Lobby extends JPanel {
 			 * Mostra a jogada do outro jogador
 			 */
 			if(jogadaArdversario != null &&jogadaArdversario.equalsIgnoreCase("TESOURA")) {
-				lblTesoura = new JLabel(new ImageIcon(getClass().getResource("/select_tesoura.png")));
-				lblTesoura.setBounds(860, 400, 165, 518);
-				add(lblTesoura);
+				lblTesoura.setVisible(true);
 			}  
 			else if(jogadaArdversario != null &&jogadaArdversario.equalsIgnoreCase("PAPEL")) {
-				lblPapel = new JLabel(new ImageIcon(getClass().getResource("/select_papel.png")));
-				lblPapel.setBounds(860, 400, 165, 518);
-				add(lblPapel);
+				lblPapel.setVisible(true);
 			}
 			
 			else if(jogadaArdversario != null && jogadaArdversario.equalsIgnoreCase("PEDRA")) {
-				lblPedra = new JLabel(new ImageIcon(getClass().getResource("/select_pedra.png")));
-				lblPedra.setBounds(860, 400, 165, 518);
-				add(lblPedra);
+				lblPedra.setVisible(true);
 			}
 				
 			if(nomeVencedor != null && !nomeVencedor.equalsIgnoreCase("null")){
