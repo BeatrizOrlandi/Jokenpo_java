@@ -1,6 +1,6 @@
 package telas;
 
-import static main.Main.CUSTOMIZED_BLUE;
+import static main.Main.CUSTOMIZED_COLOR;
 import static main.Main.fredoka;
 
 import java.awt.Dimension;
@@ -51,7 +51,7 @@ public class CreateRoom  extends JPanel {
 		
 		btnVoltar = new JButton("Voltar");
 		btnVoltar.setFont(fredoka);
-		btnVoltar.setBackground(CUSTOMIZED_BLUE);
+		btnVoltar.setBackground(CUSTOMIZED_COLOR);
 		btnVoltar.setBounds(500, 650, 200, 40);
 		add(btnVoltar);
 	}
@@ -61,11 +61,11 @@ public class CreateRoom  extends JPanel {
 	    super.paintComponent(g);
 	        g.drawImage(background, 0, 0, null);
 	        
-	        g.setColor(CUSTOMIZED_BLUE);
+	        g.setColor(CUSTOMIZED_COLOR);
 	        g.setFont(fredoka);
 	        g.drawString("Código da Sala", 500, 480);
 	        
-	        g.setColor(CUSTOMIZED_BLUE);
+	        g.setColor(CUSTOMIZED_COLOR);
 	        g.setFont(fredoka.deriveFont(6));
 	        g.drawString("Aguardando Conexão", 850, 800);
 	}

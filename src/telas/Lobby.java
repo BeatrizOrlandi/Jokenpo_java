@@ -1,7 +1,7 @@
 package telas;
 
 import static main.Main.BACKGROUND_COLOR;
-import static main.Main.CUSTOMIZED_BLUE;
+import static main.Main.CUSTOMIZED_COLOR;
 import static main.Main.fredoka;
 
 import java.awt.Dimension;
@@ -104,13 +104,13 @@ public class Lobby extends JPanel {
 		
 		btnConfirm = new JButton("Confirmar");
 		btnConfirm.setFont(fredoka);
-		btnConfirm.setBackground(CUSTOMIZED_BLUE);
+		btnConfirm.setBackground(CUSTOMIZED_COLOR);
 		btnConfirm.setBounds(500, 700, 200, 40);
 		add(btnConfirm);
 		
 		btnEncerra = new JButton("Finalizar Jogo");
 		btnEncerra.setFont(fredoka);
-		btnEncerra.setBackground(CUSTOMIZED_BLUE);
+		btnEncerra.setBackground(CUSTOMIZED_COLOR);
 		btnEncerra.setBounds(480, 760, 250, 40);
 		add(btnEncerra);
 
@@ -136,7 +136,7 @@ public class Lobby extends JPanel {
 		g.drawImage(background, 0, 0, null);
         
         
-        g.setColor(CUSTOMIZED_BLUE);
+        g.setColor(CUSTOMIZED_COLOR);
         
         /**
          * Placar
@@ -149,7 +149,7 @@ public class Lobby extends JPanel {
    	 		remove(lblPlacar);
    	 	lblPlacar = new JLabel(strPlacar, SwingConstants.CENTER);
    	 	lblPlacar.setFont(fredoka.deriveFont((float) 28));
-   	 	lblPlacar.setForeground(CUSTOMIZED_BLUE);
+   	 	lblPlacar.setForeground(CUSTOMIZED_COLOR);
    	 	lblPlacar.setBounds(350, 320, 500, 40);
    	 	add(lblPlacar);
 

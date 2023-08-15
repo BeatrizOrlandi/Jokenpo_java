@@ -53,7 +53,7 @@ public class Main extends JFrame {
 	/**
 	 * Estilizacao
 	 */
-	public static final Color CUSTOMIZED_BLUE = new Color(119, 179, 214);
+	public static final Color CUSTOMIZED_COLOR = new Color(255, 0, 0);
 	public static final Color BACKGROUND_COLOR = new Color(255, 222, 89);
 	public static Font fredoka; 
 	

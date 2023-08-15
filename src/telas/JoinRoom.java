@@ -1,7 +1,7 @@
 package telas;
 
 import static java.awt.Color.RED;
-import static main.Main.CUSTOMIZED_BLUE;
+import static main.Main.CUSTOMIZED_COLOR;
 import static main.Main.fredoka;
 
 import java.awt.Dimension;
@@ -54,13 +54,13 @@ public class JoinRoom extends JPanel {
 		
 		btnJoin = new JButton("Juntar-se");
 		btnJoin.setFont(fredoka);
-		btnJoin.setBackground(CUSTOMIZED_BLUE);
+		btnJoin.setBackground(CUSTOMIZED_COLOR);
 		btnJoin.setBounds(500, 600, 200, 40);
 		add(btnJoin);
 		
 		btnVoltar = new JButton("Voltar");
 		btnVoltar.setFont(fredoka);
-		btnVoltar.setBackground(CUSTOMIZED_BLUE);
+		btnVoltar.setBackground(CUSTOMIZED_COLOR);
 		btnVoltar.setBounds(500, 650, 200, 40);
 		add(btnVoltar);
 	}
@@ -70,7 +70,7 @@ public class JoinRoom extends JPanel {
 	    super.paintComponent(g);
 	        g.drawImage(background, 0, 0, null);
 	        
-	        g.setColor(CUSTOMIZED_BLUE);
+	        g.setColor(CUSTOMIZED_COLOR);
 	        g.setFont(fredoka);
 	        g.drawString("Informe o Código da Sala", 430, 480);
 	}

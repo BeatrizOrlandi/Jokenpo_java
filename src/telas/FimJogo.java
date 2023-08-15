@@ -1,6 +1,6 @@
 package telas;
 
-import static main.Main.CUSTOMIZED_BLUE;
+import static main.Main.CUSTOMIZED_COLOR;
 import static main.Main.fredoka;
 
 import java.awt.Dimension;
@@ -53,7 +53,7 @@ public class FimJogo extends JPanel {
 		
 		btnVoltar = new JButton("Voltar ao Menu Principal");
 		btnVoltar.setFont(fredoka);
-		btnVoltar.setBackground(CUSTOMIZED_BLUE);
+		btnVoltar.setBackground(CUSTOMIZED_COLOR);
 		btnVoltar.setBounds(360, 650, 500, 40);
 		add(btnVoltar);
 	}
@@ -65,7 +65,7 @@ public class FimJogo extends JPanel {
 	        
             lblVencedor = new JLabel(nomeVencedor + " venceu o jogo!", SwingConstants.CENTER);
             lblVencedor.setFont(fredoka.deriveFont((float) 40));
-            lblVencedor.setForeground(CUSTOMIZED_BLUE);
+            lblVencedor.setForeground(CUSTOMIZED_COLOR);
             lblVencedor.setBounds(0, 460, 1200, 40);
             if(nomeVencedor != null && !nomeVencedor.equalsIgnoreCase("empate")){
     	   	 	som.sound("res/win.wav");
@@ -89,7 +89,7 @@ public class FimJogo extends JPanel {
 	   	 	String strPlacar = placar[0] + "  " + placar[1] + "  " + "X" + "  " + placar[3] + "  " + placar[2]; 
 	   	 	lblPlacar = new JLabel(strPlacar, SwingConstants.CENTER);
 	   	 	lblPlacar.setFont(fredoka.deriveFont((float) 30));
-	   	 	lblPlacar.setForeground(CUSTOMIZED_BLUE);
+	   	 	lblPlacar.setForeground(CUSTOMIZED_COLOR);
 	   	 	lblPlacar.setBounds(0, 500, 1200, 40);
 	   	 	add(lblPlacar);
 	}
