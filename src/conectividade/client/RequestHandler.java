@@ -50,6 +50,7 @@ public class RequestHandler extends Thread {
 				}
 				
 				if("ADVERSARIOJOGOU".equals(flag)) {
+					System.err.println(value);
 					cliente.setAdversarioJogou(value);
 				}
 				
@@ -69,11 +70,6 @@ public class RequestHandler extends Thread {
 					cliente.setLobbyJogadas(jogadas);
 					
 				}
-				
-				if("PROX".equals(flag)) {
-					cliente.lobbyNextRound();	
-				}
-
 				if("VENCEDOR".equals(flag)) {
 					cliente.setLobbyVencedorRound(value);
 				}
@@ -81,6 +77,12 @@ public class RequestHandler extends Thread {
 				if("VENCEDORFINAL".equals(flag)) {
 					cliente.showFimJogo(value);		
 				}
+				
+				if("PROX".equals(flag)) {
+					cliente.lobbyNextRound();	
+				}
+
+				
 				
 				if("STOP".equals(flag)) {
 					sendToServer("Encerrando Conexão");

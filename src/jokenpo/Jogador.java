@@ -2,7 +2,7 @@ package jokenpo;
 
 public class Jogador {
 	private String nome;
-	private int vitorias = 0;
+	private int vitorias;
 	private Jogada jogadaAtual;
 	
 

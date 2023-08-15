@@ -70,9 +70,10 @@ public class RequestHandler extends Thread {
 				
 				if("JOGADA".equals(flag)) {
 					String name = line[2];
-					boolean fazerJogada = server.getJogo().armazenaJogada(name, value);
 					server.sendToClients(ADVERSARIOJOGOU + name);
-					
+
+					boolean fazerJogada = server.getJogo().armazenaJogada(name, value);
+					System.out.println(fazerJogada);
 					if(fazerJogada) { 
 						String nomeVencedor = server.getJogo().fazJogada();
 						server.sendToClients(JOGADAS + server.getJogadas());
@@ -87,10 +88,6 @@ public class RequestHandler extends Thread {
 						server.sendToClients(PLACAR + server.getPlacar());
 						server.resetarJogadas();
 						server.sendToClients(PROX + 1);
-						// String vencedorFinal = server.getJogo().verificaFim();
-						// server.sendToClients(VENCEDORFINAL + vencedorFinal);
-						// if(vencedorFinal != null)
-						// 	server.sendToClients(PLACARFINAL + server.getPlacar());
 					}
 
 					

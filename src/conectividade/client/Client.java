@@ -14,7 +14,7 @@ public class Client {
 	private byte[] address;
 	
 	/**
-	 * Responsável por receber e enviar mensagens entre o Servidor e o Cliente
+	 * Responsï¿½vel por receber e enviar mensagens entre o Servidor e o Cliente
 	 */
 	private RequestHandler requestHandler;
 	

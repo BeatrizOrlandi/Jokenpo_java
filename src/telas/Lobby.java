@@ -111,7 +111,7 @@ public class Lobby extends JPanel {
 		btnEncerra = new JButton("Finalizar Jogo");
 		btnEncerra.setFont(fredoka);
 		btnEncerra.setBackground(CUSTOMIZED_BLUE);
-		btnEncerra.setBounds(490, 800, 250, 40);
+		btnEncerra.setBounds(480, 760, 250, 40);
 		add(btnEncerra);
 	}
 	
@@ -161,35 +161,35 @@ public class Lobby extends JPanel {
          */
         else {
 
-		/**
-         * Mostra a jogada do outro jogador
-         */
-		if(jogadaArdversario != null &&jogadaArdversario.equalsIgnoreCase("TESOURA")) {
-			lblTesoura = new JLabel(new ImageIcon(getClass().getResource("/select_tesoura.png")));
-			lblTesoura.setBounds(860, 400, 165, 518);
-			add(lblTesoura);
-		}  
-		else if(jogadaArdversario != null &&jogadaArdversario.equalsIgnoreCase("PAPEL")) {
-			lblPapel = new JLabel(new ImageIcon(getClass().getResource("/select_papel.png")));
-			lblPapel.setBounds(860, 400, 165, 518);
-			add(lblPapel);
-		}
-		
-        else if(jogadaArdversario != null && jogadaArdversario.equalsIgnoreCase("PEDRA")) {
-        	lblPedra = new JLabel(new ImageIcon(getClass().getResource("/select_pedra.png")));
-			lblPedra.setBounds(860, 400, 165, 518);
-			add(lblPedra);
-        }
+			/**
+			 * Mostra a jogada do outro jogador
+			 */
+			if(jogadaArdversario != null &&jogadaArdversario.equalsIgnoreCase("TESOURA")) {
+				lblTesoura = new JLabel(new ImageIcon(getClass().getResource("/select_tesoura.png")));
+				lblTesoura.setBounds(860, 400, 165, 518);
+				add(lblTesoura);
+			}  
+			else if(jogadaArdversario != null &&jogadaArdversario.equalsIgnoreCase("PAPEL")) {
+				lblPapel = new JLabel(new ImageIcon(getClass().getResource("/select_papel.png")));
+				lblPapel.setBounds(860, 400, 165, 518);
+				add(lblPapel);
+			}
 			
-        	if(nomeVencedor != null && !nomeVencedor.equalsIgnoreCase("null")){
-                g.setFont(fredoka.deriveFont((float) 40));
-                g.drawString(nomeVencedor, 500, 550);
-            	g.drawString("venceu o round!", 420, 600);
+			else if(jogadaArdversario != null && jogadaArdversario.equalsIgnoreCase("PEDRA")) {
+				lblPedra = new JLabel(new ImageIcon(getClass().getResource("/select_pedra.png")));
+				lblPedra.setBounds(860, 400, 165, 518);
+				add(lblPedra);
+			}
+				
+			if(nomeVencedor != null && !nomeVencedor.equalsIgnoreCase("null")){
+				g.setFont(fredoka.deriveFont((float) 40));
+				g.drawString(nomeVencedor, 500, 550);
+				g.drawString("venceu o round!", 420, 600);
 
-        	} else {
-        		g.setFont(fredoka.deriveFont((float) 50));
-            	g.drawString("Empate!", 500, 550);
-        	}
+			} else {
+				g.setFont(fredoka.deriveFont((float) 50));
+				g.drawString("Empate!", 500, 550);
+			}
 			
         }
 	}
@@ -209,9 +209,10 @@ public class Lobby extends JPanel {
 	}
 	
 	public void setAdversarioJogou(boolean adversarioJogou) {
+		if(this.adversarioJogou)
+			return;
 		
 		this.adversarioJogou = adversarioJogou;
-
 		if(adversarioJogou)
 			lblLupa.setVisible(false);
 		validate();
@@ -236,18 +237,20 @@ public class Lobby extends JPanel {
 		/**
 		 * Refaz todas as configurações iniciais
 		 */
-		if(lblTesoura != null)
-        		lblTesoura.setVisible(false);
-		if(lblPapel != null)
-				lblPapel.setVisible(false);
-		if(lblPedra != null)
-				lblPedra.setVisible(false);
+		
 		lblLupa.setVisible(true);
 
 		jogadaArdversario = null;
 		adversarioJogou = false;
 		fimRound = false;
 		nomeVencedor = null;
+
+		if(lblTesoura != null)
+        		lblTesoura.setVisible(false);
+		if(lblPapel != null)
+				lblPapel.setVisible(false);
+		if(lblPedra != null)
+				lblPedra.setVisible(false);
 
 		
 		btnConfirm.setText("Confirmar");
